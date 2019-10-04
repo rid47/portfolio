@@ -6,7 +6,9 @@ from .models import *
 
 def home(request):
 
-    jobs = Job.objects.all
+    jobs = Job.objects.all()
+    for job in jobs:
+        print(job.image.url)
     template = 'jobs/home.html'
     context ={
         'jobs': jobs,
